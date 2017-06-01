@@ -32,7 +32,6 @@ sudo make install
 
 #default policy of the INPUT chain to DROP
 
-sudo iptables -P INPUT DROP
 
 sudo iptables -A INPUT -i eth0 -p tcp --dport 80 -j ACCEPT
 
@@ -41,6 +40,8 @@ sudo iptables -A INPUT -i eth0 -p tcp --dport 443 -j ACCEPT
 sudo iptables -A INPUT -i eth0 -p tcp --dport 22 -j ACCEPT
 
 sudo iptables -A INPUT -i eth0 -p tcp --dport 2222 -j ACCEPT # vagrant ssh 
+
+sudo iptables -P INPUT DROP
 
 #configure db and user pri...
 ##      sudo su - postgres  
